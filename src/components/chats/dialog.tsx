@@ -1,10 +1,13 @@
 import React from "react"
+import { Container, Grid, Paper } from "@material-ui/core";
 
 const Dialog : React.FC = () => {
     return (
-        <div>
-              <h1>Dialog</h1>
-        </div>
+        <Container>
+        <Grid>
+           <Paper>Dialog</Paper>
+        </Grid>
+      </Container>
     )
 }
 export default Dialog;
