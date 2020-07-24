@@ -31,18 +31,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const sendServer = (e: any) => {
-  e.preventDefault();
-  console.log("work")
-  const obj = {email : '1231231@mail.ru', password : '12345678', firstName: "John"}
-  userApi.signup(obj)
-  console.log()
-  
-}
 
-const Signup: React.FC = () => {
+
+const Signup: React.FC = (props) => {
   const classes = useStyles();
-
+  const sendServer = (e: any) => {
+    e.preventDefault();
+    const obj = {email : '1231231@mail.ru', password : '12345678', firstName: "John"}
+    userApi.signup(obj)
+    
+  }
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />

@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Signin: React.FC<any> = () => {
+const Signin: React.FC<any> = (props) => {
   const classes = useStyles();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -43,20 +43,20 @@ const Signin: React.FC<any> = () => {
   const [errPassword, setErrPassword] = useState<string>("");
 
   const handlerChange = (event: any) => {
+    setErrEmail("");
+    setErrPassword("");
     if (event.target.id === "email") {
-      setErrEmail("");
-      const err = validate.email(event.target.value);
-      if (err !== undefined) {
-        setErrEmail(err);
+      const error = validate.email(event.target.value);
+      if (error !== undefined) {
+        setErrEmail(error);
       }
       setEmail(event.target.value);
     }
 
     if (event.target.id === "password") {
-      setErrPassword("");
-      const err = validate.password(event.target.value);
-      if (err !== undefined) {
-        setErrPassword(err === "Слишком лёгкий пароль" ? '' : err);
+      const error = validate.password(event.target.value);
+      if (error !== undefined) {
+        setErrPassword(error === "Слишком лёгкий пароль" ? "" : error);
       }
       setPassword(event.target.value);
     }
@@ -64,12 +64,22 @@ const Signin: React.FC<any> = () => {
 
   const sendServer = (e: any) => {
     e.preventDefault();
-    const err_email = validate.email(email);
-    // setErrEmail((err_email === 'Неверный E-Mail' ? '' : err_email );
-    const err_password = validate.password(password);
-    // setErrPassword(err_password === 'Слишком лёгкий пароль' ? '' : err_password);
-    userApi.signin({ email, password });
-    console.log();
+    if (!email.trim() && !password.trim()) {
+      setErrEmail("");
+      setErrPassword("");
+      const error = validate.email(email);
+      const error2 = validate.password(password);
+
+      if (error !== undefined && error2 != undefined) {
+        return (
+          setErrEmail(error),
+          setErrPassword(error2 === "Слишком лёгкий пароль" ? "" : error2)
+        );
+      }
+    }
+    userApi.signin({ email, password }).then(user => {
+    })
+
   };
 
   return (
@@ -81,7 +91,7 @@ const Signin: React.FC<any> = () => {
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
-          error = {errEmail.length > 1 ? true : false}
+            error={errEmail.length > 1 ? true : false}
             variant="outlined"
             margin="normal"
             required
@@ -94,7 +104,7 @@ const Signin: React.FC<any> = () => {
             onChange={handlerChange}
           />
           <TextField
-            error= {errPassword.length > 1 ? true : false}
+            error={errPassword.length > 1 ? true : false}
             variant="outlined"
             margin="normal"
             required

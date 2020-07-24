@@ -1,13 +1,16 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Dialogs from "./dialogs";
-// import Dialog from "./dialog";
+import Dialog from "./dialog";
+import Panel from "../panel/index";
+const Home: React.FC = (props: any) => {
+  const { history } = props;
 
-const Home: React.FC = () => {
   return (
     <React.Fragment>
-        <Route exact path="/chats" component={Dialogs} />
-        {/* <Route exact path="/chats" component={Dialog} /> */}
+      <Route history={history} exact path="/chats" component={Dialogs} />
+      <Route history={history} path="/chats/dialog" component={Dialog} />
+      <Route history={history} component={Panel} />
     </React.Fragment>
   );
 };
