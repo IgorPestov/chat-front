@@ -11,9 +11,10 @@ import {
   SettingsRounded,
   Person,
 } from "@material-ui/icons";
+import socket from "../../core/socket.io";
 
 const useStyles = makeStyles({
-  root: {
+  rootPanel: {
     width: "100%",
     position: "fixed",
     bottom: "0",
@@ -22,27 +23,40 @@ const useStyles = makeStyles({
   },
 });
 
-const Panel: React.FC = (props:any) => {
+const Panel: React.FC = (props: any) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(1);
+
+  // socket.on("connects", (msg: string) => {
+  //   console.log("user is connect", msg);
+  // });
+  
+  // socket.on("addMsg", (data: any) => {
+  //   socket.emit("sendMsg")
+
+  //   console.log(data);
+  // });
+
   return (
     <BottomNavigation
       value={value}
+     
       onChange={(event, newValue) => {
+
         switch (newValue) {
           case 0:
-            return props.history.push("/contacts");
+            return props.history.push("/chats");
           case 1:
             return props.history.push("/chats");
           case 2:
-            return props.history.push("/setings");
+            return props.history.push("/chats");
           case 3:
-            return props.history.push("/profile");
+            return props.history.push("/chats");
         }
         setValue(newValue);
       }}
       showLabels
-      className={classes.root}
+      className={classes.rootPanel}
     >
       <BottomNavigationAction label="Contacts" icon={<PermContactCalendar />} />
       <BottomNavigationAction label="Chats" icon={<ForumRounded />} />

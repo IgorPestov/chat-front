@@ -13,7 +13,7 @@ import {
 import Panel from "../panel";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  rootDialogs: {
     width: "100%",
     height: "100%",
     backgroundColor: theme.palette.background.paper,
@@ -34,8 +34,8 @@ const Chats: React.FC = (props :any , event) => {
   } 
   return (
     <React.Fragment>
-      <Paper className={classes.root}>
-        <List className={classes.root}>
+      <Paper className={classes.rootDialogs}>
+        <List className={classes.rootDialogs}>
           <ListItem className={classes.ListItem} alignItems="flex-start" onClick={choiceDialog}>
             <ListItemAvatar>
               <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
