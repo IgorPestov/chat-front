@@ -1,0 +1,64 @@
+@media (min-width: 500px) {
+    .signin {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .signin-email {
+        width: 25%;
+        margin-top: 40%;
+        height: 25px;
+    }
+    .signin-password {
+        width: 25%;
+        height: 25px;
+        margin-top: 50px;
+    }
+    .button-signin {
+        margin-top: 20px;
+    }
+    .link-signin {
+        margin-top: 20px;
+        margin-right: 5em;
+    }
+    .signin-button-link {
+        margin-left: 35%;
+        display: inline;
+    }
+}
+
+@media (min-width: 280px) and (max-width: 480px) {
+    .signin {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .signin-email {
+        width: 75%;
+        margin-top: 40%;
+        height: 25px;
+    }
+    .signin-password {
+        width: 75%;
+        height: 25px;
+        margin-top: 50px;
+    }
+    .button-signin {
+        margin-top: 20px;
+    }
+    .link-signin {
+        margin-top: 20px;
+        margin-right: 5em;
+    }
+    .signin-button-link {
+        display: inline;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {}
+
+@media (min-width: 768px) and (max-width: 1024px) {}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
+
+@media (min-width: 481px) and (max-width: 767px) {}
