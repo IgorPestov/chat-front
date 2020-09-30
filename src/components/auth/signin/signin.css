@@ -1,17 +1,56 @@
+input[type=password] {
+    /* background-image: -webkit-gradient(linear, 0% 60%, 0% 0%, from(#6bffc62c), to(#00e1ff3b)); */
+    background-color: #6bffc62c;
+    color: rgba(44, 16, 12, 0.74);
+    border-color: #16442d93
+}
+
+input[type=text] {
+    /* background-image: -webkit-gradient(linear, 0% 60%, 0% 0%, from(#6bffc62c), to(#00e1ff3b)); */
+    background-color: #6bffc62c;
+    color: rgba(44, 16, 12, 0.74);
+    border-color: #16442d93
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 @media (min-width: 500px) {
+    .main-signin {
+        position: relative;
+        margin-top: 15%;
+        border-radius: 40px;
+        border-width: 0.1px;
+        border-color: rgba(1, 42, 11, 0.452);
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        border-style: solid;
+        width: 60%;
+        height: 500px;
+    }
     .signin {
+        position: relative;
         display: block;
         margin-right: auto;
         margin-left: auto;
     }
     .signin-email {
-        width: 25%;
-        margin-top: 40%;
-        height: 25px;
+        border-radius: 8px;
+        border-width: 0.1px;
+        width: 30%;
+        margin-top: 20%;
+        height: 35px;
     }
     .signin-password {
-        width: 25%;
-        height: 25px;
+        border-radius: 8px;
+        border-width: 0.1px;
+        width: 30%;
+        height: 35px;
         margin-top: 50px;
     }
     .button-signin {
@@ -34,11 +73,15 @@
         margin-left: auto;
     }
     .signin-email {
+        border-radius: 8px;
+        border-width: 0.1px;
         width: 75%;
         margin-top: 40%;
         height: 25px;
     }
     .signin-password {
+        border-radius: 8px;
+        border-width: 0.1px;
         width: 75%;
         height: 25px;
         margin-top: 50px;

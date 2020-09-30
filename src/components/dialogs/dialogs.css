@@ -1,0 +1,13 @@
+.dialogs {
+    /* border-style: solid;
+    border-width: 0.1px;
+    position: absolute;
+    display: inline-block;
+    width: 80%;
+    height: 100%;
+    margin-left: 20%; */
+}
+
+@media (min-width: 500px) {}
+
+@media (min-width: 280px) and (max-width: 480px) {}

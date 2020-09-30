@@ -2,17 +2,22 @@ import React, { useState } from "react";
 import './signin.css'
 import '../../apiHelper/api'
 import api from "../../apiHelper/api";
+import {useDispatch}  from 'react-redux'
+import action from "../../../redux/action";
 
-const Signin: React.FC = () => {
-
+const Signin: React.FC = (props:any) => {
+  const dispatch = useDispatch()
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const signIn = async () => {
     const user = await api.Signin(email, password)
-    console.log(user)
+    if(user) {
+      dispatch(action.postUser(user))
+       props.history.push('/main')
+    }
   }
   return (
-    <div>
+    <div className ='main-signin'>
       <div className='signin'>
         <input
           className='signin signin-email'

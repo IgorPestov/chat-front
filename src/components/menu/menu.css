@@ -1,0 +1,35 @@
+@media (min-width: 500px) {
+    .menu {
+        position: absolute;
+        list-style: none;
+        padding-left: 0;
+        width: 20%;
+        margin: 0;
+    }
+    .menu-nav {
+        margin: 10px;
+        /* display: block; */
+        text-decoration: none;
+        height: 30px;
+        line-height: 30px;
+        font-size: x-large;
+    }
+}
+
+@media (min-width: 280px) and (max-width: 480px) {
+    .menu {
+        bottom: 0;
+        position: absolute;
+        list-style: none;
+        padding-left: 0;
+        width: 100%;
+    }
+    .menu-nav {
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        line-height: 30px;
+        font-size: x-large;
+    }
+}
