@@ -1,21 +1,32 @@
-import React from 'react'
-import { Route } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Route, Redirect, Switch } from 'react-router-dom'
 import Header from '../header'
 import Menu from '../menu'
-import Dialogs from '../dialogs'
+import DialogsAll from '../dialogs'
 import Setting from '../setting'
 
 import './mainPage.css'
+import Contacts from '../contacts'
 
 const mainPage: React.FC = (props: any) => {
+ 
+    // useEffect(()=>{
+
+    // })
     return (
         <div>
             <div className='main-page'>
-                <Header />
+                <Header  {...props} />
                 <Menu {...props} />
                 <div className='profile-dialogs-settings'>
-                    <Route history={props.history} path='/main/dialogs' component={Dialogs} />
-                    <Route history={props.history} path='/main/setting' component={Setting} />
+                    <Switch>
+                        {props.history.location.pathname !== `/home/dialogs/${1}` ? <Route history={props.history} path='/home/dialogs' component={DialogsAll.Dialogs} /> :
+                            <Route history={props.history} path={`/home/dialogs/${1}`} component={DialogsAll.Dialog} />}
+                        <Route history={props.history} path='/home/setting' component={Setting} />
+                        <Route history={props.history} path='/home/contacts' component={Contacts} />
+                        <Redirect from='/home' to='/home/dialogs' />
+                    </Switch>
+
                 </div>
 
             </div>

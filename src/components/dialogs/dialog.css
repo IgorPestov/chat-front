@@ -1,0 +1,37 @@
+.dialog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.participant1 {
+    margin-left: 4%;
+    align-self: flex-start;
+}
+
+.participant2 {
+    margin-right: 4%;
+    align-self: flex-end;
+}
+
+.imput-message {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-message {
+    position: absolute;
+    width: calc(80%);
+    line-height: 20px;
+    resize: none;
+    max-height: 180px;
+    margin: 5px;
+    bottom: 5px;
+}
+
+.send-button {
+    position: absolute;
+    bottom: 4%;
+    margin-right: 2%;
+    align-self: flex-end;
+}

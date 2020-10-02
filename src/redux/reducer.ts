@@ -1,7 +1,7 @@
 
 let initialState = {
-    name: {
-        id: '',
+    state: {
+        userId: '',
         fullname: '',
     }
 }
@@ -9,12 +9,12 @@ const reducer = (state: any = initialState, { type, payload }: any) => {
     switch (type) {
         case "POST_USER":
             const {
-                _id,
+                userId,
                 fullname,
             } = payload
             return {
                 user: {
-                    id: _id,
+                    userId,
                     fullname,
                 }
             }

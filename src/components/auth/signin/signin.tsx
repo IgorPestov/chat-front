@@ -4,16 +4,19 @@ import '../../apiHelper/api'
 import api from "../../apiHelper/api";
 import {useDispatch}  from 'react-redux'
 import action from "../../../redux/action";
-
+import decode from 'jwt-decode'
 const Signin: React.FC = (props:any) => {
   const dispatch = useDispatch()
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const signIn = async () => {
-    const user = await api.Signin(email, password)
-    if(user) {
+    const token = await api.Signin(email, password)
+    if(token) {
+      const user = decode(token)
+      console.log('user --------', user)
       dispatch(action.postUser(user))
-       props.history.push('/main')
+      localStorage.setItem('token',token)
+       props.history.push('/home')
     }
   }
   return (
