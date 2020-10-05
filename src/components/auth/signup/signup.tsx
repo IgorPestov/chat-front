@@ -19,6 +19,14 @@ const Signup: React.FC<any> = (props) => {
           className='signin signin-password'
           type='password' placeholder='password'
           onChange={(e) => setPassword(e.target.value)} />
+           <input
+          className='signin signin-firstName'
+          type='text' placeholder='First name'
+          onChange={(e) => setPassword(e.target.value)} />
+            <input
+          className='signin signin-lastName'
+          type='text' placeholder='Last name'
+          onChange={(e) => setPassword(e.target.value)} />
       </div>
       <div className='signin signin-button-link'>
         <button className=' button-signin' onClick={signUp}>Sign up</button>

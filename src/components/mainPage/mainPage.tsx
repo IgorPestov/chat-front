@@ -4,15 +4,14 @@ import Header from '../header'
 import Menu from '../menu'
 import DialogsAll from '../dialogs'
 import Setting from '../setting'
-
-import './mainPage.css'
 import Contacts from '../contacts'
 
-const mainPage: React.FC = (props: any) => {
- 
-    // useEffect(()=>{
+import './mainPage.css'
 
-    // })
+const mainPage: React.FC= (props: any) => {
+
+
+
     return (
         <div>
             <div className='main-page'>

@@ -13,7 +13,6 @@ const Signin: React.FC = (props:any) => {
     const token = await api.Signin(email, password)
     if(token) {
       const user = decode(token)
-      console.log('user --------', user)
       dispatch(action.postUser(user))
       localStorage.setItem('token',token)
        props.history.push('/home')

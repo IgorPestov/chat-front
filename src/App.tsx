@@ -9,7 +9,6 @@ function App(props: any) {
   const { history } = props
 
   const authorization = window.localStorage.getItem('token')
-  console.log(!!authorization)
 
   return (
 
