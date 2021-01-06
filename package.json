@@ -9,7 +9,7 @@
     "@types/jwt-decode": "^2.2.1",
     "@types/react-router-dom": "^5.1.5",
     "@types/redux-thunk": "^2.1.0",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "concurrently": "^5.2.0",
     "jwt-decode": "^3.0.0",
     "mogoose": "0.0.1-security",
